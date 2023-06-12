@@ -382,6 +382,16 @@ if submit:
                     except:
                         pass
 
+                try:
+                    st.markdown(f"**:red[List of patents]**")
+                    df = df_total[["Document key", "Title", "Jurisdiction","Inventors","Owners"]]
+                    df.set_index("titles", inplace=True)
+                    st.dataframe(df, use_container_width=True)
+                    st.download_button(label="Download list", data=df.to_csv().encode('utf-8'),
+                                       file_name='List of patents.csv')
+                except:
+                    pass
+
 
 
             sna_inventor_series = df_total["Inventors"]
