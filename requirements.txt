@@ -1,0 +1,12 @@
+streamlit==1.22.0
+bs4==0.0.1
+plotly==5.15.0
+networkx == 3.1
+lxml==4.9.2
+wordcloud==1.9.2
+pyvis == 0.3.2
+
+
+
+
+
