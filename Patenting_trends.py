@@ -16,6 +16,7 @@ url = 'https://api.lens.org/patent/search'
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
 st.title("Patenting trends for eVTOL")
+st.header("This app uses data from Lens.org")
 
 with st.sidebar:
     submit = st.button("Get patenting trends!")
@@ -276,7 +277,7 @@ if submit:
                 except:
                     pass
 
-            st.markdown("**:red[Patenting trend by year, by jurisdiction]**")
+            st.markdown("**:red[Number of patents by year, by jurisdiction]**")
             df_yr_jur = df_total.groupby(["Application filing year", "Jurisdiction"]).count()
             df_yr_jur = df_yr_jur.reset_index(level=[0, 1]) #turning multi-index to new integer single-index
             fig = px.bar(df_yr_jur, x="Application filing year", y="Title", color="Jurisdiction")
