@@ -16,7 +16,7 @@ url = 'https://api.lens.org/patent/search'
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
 st.title("Patenting trends for eVTOL")
-st.header("This app uses data from Lens.org")
+st.subheader("This app uses data from Lens.org")
 
 with st.sidebar:
     submit = st.button("Get patenting trends!")
